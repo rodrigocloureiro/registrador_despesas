@@ -15,11 +15,17 @@ public class ExpenseController {
     @PostMapping
     public ResponseEntity<Object> registerExpense(@RequestBody Expense expense) {
         expenseService.registerExpense(expense);
-        return ResponseEntity.ok().body("VASCO");
+        return ResponseEntity.ok().body("REGISRADO");
     }
 
     @GetMapping
     public ResponseEntity<Object> getAllExpenses() {
         return ResponseEntity.ok().body(expenseService.getAllExpenses());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteExpenseById(@PathVariable long id) {
+        expenseService.deleteExpenseById(id);
+        return ResponseEntity.ok().body("DELETADO");
     }
 }
