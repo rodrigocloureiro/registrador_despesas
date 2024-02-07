@@ -23,6 +23,11 @@ public class ExpenseController {
         return ResponseEntity.ok().body(expenseService.getAllExpenses());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getExpenseById(@PathVariable long id) {
+        return ResponseEntity.ok().body(expenseService.getExpenseById(id));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteExpenseById(@PathVariable long id) {
         expenseService.deleteExpenseById(id);
