@@ -39,6 +39,6 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     @Override
     public void deleteExpense(Expense expense) {
-
+        expenseRepository.delete(expense);
     }
 }

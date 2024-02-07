@@ -28,4 +28,10 @@ public class ExpenseController {
         expenseService.deleteExpenseById(id);
         return ResponseEntity.ok().body("DELETADO");
     }
+
+    @DeleteMapping
+    public ResponseEntity<Object> deleteExpense(@RequestBody Expense expense) {
+        expenseService.deleteExpense(expense);
+        return ResponseEntity.ok().body("DELETADO");
+    }
 }
